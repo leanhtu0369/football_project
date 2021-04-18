@@ -1,7 +1,64 @@
-body {
-  
+@import '_constants';
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.is-active {
-  color: red;
+@each $key, $num in $container-max-widths {
+  @media (min-width: map-get($grid-breakpoints, $key)) {
+      .container {
+          max-width: $num;
+      }
+  }
+}
+
+.custom-thumbnail {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+
+  &__background {
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+  }
+}
+
+.competition-item {
+  border: 1px solid $color-border;
+  box-shadow: 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, .1);
+  border-radius: .125rem;
+  background: #fff;
+
+  &__thumbnail {
+
+  }
+
+  &__info {
+    padding: 15px;
+
+    &__area {
+      display: flex;
+      align-items: center;
+
+      &__flag {
+        width: 20px;
+        padding-top: calc(20px * 2 / 3);
+      }
+
+      &__name {
+        flex: 1;
+        margin-left: 5px;
+      }
+    }
+  }
 }

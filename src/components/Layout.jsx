@@ -8,37 +8,18 @@ import Header from "./Header"
 
 import 'antd/dist/antd.css'
 import { router } from "../router"
+import BreadcrumbComponent from "./Breadcrumb"
 
 const LayoutComponent = () => {
   const { Content } = Layout
-  
   const location = useLocation()
-  // console.log(useLocation())
-  const pathSnippets = location.pathname.split('/').filter(i => i)
-  const extraBreadcrumbItems = pathSnippets.map((_, index) => {
-    const url = `/${pathSnippets.slice(0, index + 1).join('/')}`
-
-    return (
-      <Breadcrumb.Item key={url}>
-        <Link to={url}>{pathSnippets[index]}</Link>
-      </Breadcrumb.Item>
-    );
-  })
-
-  const breadcrumbItems = [
-    <Breadcrumb.Item key="home">
-      <Link to="/">Home</Link>
-    </Breadcrumb.Item>,
-  ].concat(extraBreadcrumbItems);
 
   return (
       <Layout className="layout">
-        <Header></Header>
+        <Header location={location} />
 
-        <Content style={{ padding: '0 50px' }}>
-          <Breadcrumb style={{ margin: '16px 0', textTransform: 'capitalize' }}>
-            {breadcrumbItems}
-          </Breadcrumb>
+        <Content className="container">
+          <BreadcrumbComponent location={location}/>
 
           <div className="site-layout-content">
             <Switch>
@@ -57,7 +38,7 @@ const LayoutComponent = () => {
           </div>
         </Content>
 
-        <Footer></Footer>
+        <Footer />
       </Layout>
   )
 }

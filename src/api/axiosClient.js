@@ -6,7 +6,7 @@ const axiosClient = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
   headers: {
     'content-type': 'application/json',
-    'X-Auth-Token': '725cdc0c05ef4ac6870402e11beb7ddc'
+    'X-Auth-Token': process.env.REACT_APP_API_TOKEN
   }
 });
 
