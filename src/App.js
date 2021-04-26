@@ -1,13 +1,11 @@
-
 import { Provider } from "react-redux"
 import { BrowserRouter } from "react-router-dom"
-import LayoutComponent from "./components/Layout"
 import store from "./redux/store"
 
+import LayoutComponent from "./components/Layout"
 import './scss/index.scss'
 
 const App = () => {
-
 
   return (
     <>

@@ -1,6 +1,5 @@
 import { Layout } from "antd"
 
-
 const Footer =  () => {
   const { Footer } = Layout
 

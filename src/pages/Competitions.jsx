@@ -1,8 +1,9 @@
-import { Col, Row } from "antd"
 import { useEffect, useState } from "react"
-import competitionApi from "../api/competitionApi"
-import store from "../redux/store"
 
+import store from "../redux/store"
+import { Col, Row } from "antd"
+
+import competitionApi from "../api/competitionApi"
 import Images from '../constants/images';
 
 const Competitions = () => {
@@ -28,14 +29,14 @@ const Competitions = () => {
     <>
       <h2>Đây là page Competitions</h2>
 
-      <Row gutter={[30, 30]}>
+      <Row gutter={[10, 10]}>
         {
           competitionList.map(competition => (
-            <Col key={competition.id} xs={12} sm={12} md={8} lg={6} xl={6} xxl={4}>
+            <Col key={competition.id} xs={12} sm={8} md={8} lg={6} xl={4} xxl={4}>
+              {/* {competition.area.countryCode} */}
               <div className="competition-item">
-                <div className="custom-thumbnail competition-item__thumbnail">
-                  <div 
-                    className="custom-thumbnail__background" 
+                <div className="custom-thumbnail custom-thumbnail--ratio-1-1 competition-item__thumbnail">
+                  <div className="custom-thumbnail__background" 
                     style={{ backgroundImage: `url(${competition.emblemUrl || Images.NO_IMAGE})` }}
                   >
 
@@ -43,12 +44,11 @@ const Competitions = () => {
                 </div>
 
                 <div className="competition-item__info">
-                  <a href={`/competitions/${competition.id}`}>Tên: {competition.name} ({competition.code})</a>
+                  <a href={`/competitions/${competition.id}`}>{competition.name} ({competition.code})</a>
 
                   <div className="competition-item__info__area">
-                    <div className="custom-thumbnail competition-item__info__area__flag">
-                      <div 
-                        className="custom-thumbnail__background" 
+                    <div className="custom-thumbnail custom-thumbnail--flag competition-item__info__area__flag">
+                      <div className="custom-thumbnail__background" 
                         style={{ backgroundImage: `url(${competition.area.ensignUrl || Images.NO_IMAGE})` }}
                       >
 

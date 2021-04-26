@@ -1,13 +1,11 @@
-import { Breadcrumb, Layout } from "antd"
-
 import { Route, Switch } from "react-router"
-import { Link, useLocation } from "react-router-dom"
-
-import Footer from "./Footer"
-import Header from "./Header"
-
+import { useLocation } from "react-router-dom"
+import { Layout } from "antd"
 import 'antd/dist/antd.css'
+
 import { router } from "../router"
+import Header from "./Header"
+import Footer from "./Footer"
 import BreadcrumbComponent from "./Breadcrumb"
 
 const LayoutComponent = () => {

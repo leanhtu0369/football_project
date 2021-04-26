@@ -16,10 +16,32 @@
   }
 }
 
+@mixin limitLine($line, $lineHeight) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  height: $line * $lineHeight;
+}
+
 .custom-thumbnail {
   position: relative;
   width: 100%;
-  padding-top: 100%;
+
+  &--ratio-1-1 {
+    padding-top: 100%;
+  }
+
+  &--flag {
+    width: 20px;
+    padding-top: calc(20px * 2 / 3);
+  }
+
+  &--logo-team {
+    width: 20px;
+    padding-top: 20px;
+  }
 
   &__background {
     position:  absolute;
@@ -44,21 +66,55 @@
   }
 
   &__info {
-    padding: 15px;
+    padding: 15px 10px;
+
+    a {
+      @include limitLine(1, 22px)
+    }
 
     &__area {
       display: flex;
       align-items: center;
 
       &__flag {
-        width: 20px;
-        padding-top: calc(20px * 2 / 3);
+
       }
 
       &__name {
         flex: 1;
         margin-left: 5px;
       }
+    }
+  }
+}
+
+.team-item {
+
+  &__header {
+    display: flex;
+    align-items: center;
+
+    &__logo {
+
+    }
+
+    &__name {
+      margin-left: 10px;
+    }
+  }
+}
+
+.season-item {
+
+  &__time {
+
+  }
+
+  &__winner {
+    display: flex;
+
+    &__title {
+      margin-right: 5px;
     }
   }
 }

@@ -1,9 +1,10 @@
 import Areas from "./pages/Areas";
 import Competitions from "./pages/Competitions";
-import CompetitionsDetail from "./pages/CompetitionsDetail";
+import CompetitionDetail from "./pages/CompetitionDetail";
 import Home from "./pages/Home";
 import Matchs from "./pages/Matches";
 import Teams from "./pages/Teams";
+import CompetitionTeams from "./pages/CompetitionTeams";
 
 export const router = [
   {  
@@ -29,10 +30,20 @@ export const router = [
   {  
     path: '/competitions/:id',
     exact: true,
-    Component: <CompetitionsDetail />,
+    Component: <CompetitionDetail />,
     menu: {
       status: false,
-      name: 'CompetitionsDetail'
+      name: 'CompetitionDetail'
+    }
+  },
+
+  {  
+    path: '/competitions/:id/teams',
+    exact: true,
+    Component: <CompetitionTeams />,
+    menu: {
+      status: false,
+      name: 'CompetitionTeams'
     }
   },
 
@@ -49,7 +60,7 @@ export const router = [
   // {  
   //   path: '/matches/:id',
   //   exact: true,
-  //   Component: <CompetitionsDetail />,
+  //   Component: <CompetitionDetail />,
   //   menu: {
   //     status: true,
   //     name: 'Home'
@@ -69,7 +80,7 @@ export const router = [
   // {  
   //   path: '/teams/:id',
   //   exact: true,
-  //   Component: <CompetitionsDetail />,
+  //   Component: <CompetitionDetail />,
   //   menu: {
   //     status: true,
   //     name: 'Home'
@@ -89,7 +100,7 @@ export const router = [
   // {  
   //   path: '/areas/:id',
   //   exact: true,
-  //   Component: <CompetitionsDetail />,
+  //   Component: <CompetitionDetail />,
   //   menu: {
   //     status: true,
   //     name: 'Home'

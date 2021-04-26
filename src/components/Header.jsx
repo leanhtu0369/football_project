@@ -1,7 +1,5 @@
-import { Layout, Menu } from "antd"
-import _ from "lodash"
-import { useState } from "react"
 import { NavLink } from "react-router-dom"
+import { Layout, Menu } from "antd"
 
 import { router } from "../router"
 
