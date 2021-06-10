@@ -5,6 +5,9 @@ import Home from "./pages/Home";
 import Matchs from "./pages/Matches";
 import Teams from "./pages/Teams";
 import CompetitionTeams from "./pages/CompetitionTeams";
+import CompetitionStandings from "./pages/CompetitionStandings";
+import CompetitionMatches from "./pages/CompetitionMatches";
+import CompetitionScorers from "./pages/CompetitionScorers";
 
 export const router = [
   {  
@@ -44,6 +47,36 @@ export const router = [
     menu: {
       status: false,
       name: 'CompetitionTeams'
+    }
+  },
+
+  {  
+    path: '/competitions/:id/standings',
+    exact: true,
+    Component: <CompetitionStandings />,
+    menu: {
+      status: false,
+      name: 'CompetitionStandings'
+    }
+  },
+
+  {  
+    path: '/competitions/:id/matches',
+    exact: true,
+    Component: <CompetitionMatches />,
+    menu: {
+      status: false,
+      name: 'CompetitionMatches'
+    }
+  },
+
+  {  
+    path: '/competitions/:id/scorers',
+    exact: true,
+    Component: <CompetitionScorers />,
+    menu: {
+      status: false,
+      name: 'CompetitionScorers'
     }
   },
 

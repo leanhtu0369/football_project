@@ -105,16 +105,34 @@
 }
 
 .season-item {
+  display: flex;
 
-  &__time {
+  &__title {
+    margin-right: 10px;
+  }
+}
 
+.standing {
+
+  &__group {
+    
   }
 
-  &__winner {
-    display: flex;
-
-    &__title {
-      margin-right: 5px;
+  &__table {
+    &__club {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+  
+      &__position {
+        width: 20px;
+        text-align: center;
+      }
+  
+      &__logo {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
     }
   }
 }
