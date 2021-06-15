@@ -8,7 +8,7 @@ const Areas = () => {
   const fetchAreaList = async () => {
     try {
       const response = await areaApi.getAll()
-      console.log(response.areas);
+      // console.log(response.areas);
       setCompetitionList(response.areas)
     } catch (error) {
       console.log('Failed to fetch area list: ', error)

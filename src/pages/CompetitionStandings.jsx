@@ -18,7 +18,7 @@ const CompetitionStandings = () => {
     try {
       const response = await competitionApi.getStandings(id)
 
-      console.log(response);
+      // console.log(response);
       setCompetitionListStandings(response.standings)
     } catch (error) {
       console.log('Failed to fetch competition list standings: ', error);

@@ -11,7 +11,7 @@ const Matches = () => {
       const response = await matchApi.getAll()
       const responseAllow = response.matches.filter(match => competitionAllow.find(item => item === match.competition.id))
       setMatchList(responseAllow)
-      console.log(responseAllow);
+      // console.log(responseAllow);
     } catch (error) {
       console.log('Failed to fetch match list: ', error);
     }

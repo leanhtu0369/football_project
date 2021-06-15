@@ -15,7 +15,7 @@ const Competitions = () => {
       const response = await competitionApi.getAll()
       const responseAllow = response.competitions.filter(competition => competitionAllow.find(item => item === competition.id))
       setCompetitionList(responseAllow)
-      console.log(responseAllow);
+      // console.log(responseAllow);
     } catch (error) {
       console.log('Failed to fetch competition list: ', error)
     }
